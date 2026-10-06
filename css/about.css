@@ -1,0 +1,109 @@
+#About {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: clamp(32px, 8vw, 120px);
+    overflow: hidden;
+    background-color: #0a192f;
+    background-image:
+        linear-gradient(90deg, #0a192f 0%, rgba(10, 25, 47, 0.96) 34%, rgba(10, 25, 47, 0.58) 66%, rgba(10, 25, 47, 0.2) 100%),
+        url("../assets/icon.webp");
+    background-repeat: no-repeat;
+    background-position: center, right center;
+    background-size: cover, auto 100%;
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+}
+
+.about-eyebrow {
+    margin-bottom: 16px;
+    color: #8fc7ff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.about-content h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.08;
+}
+
+.about-content h1 span {
+    color: #8fc7ff;
+}
+
+.about-headline {
+    margin: 0 0 16px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.35rem, 3.2vw, 2rem);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.about-typing-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.about-typing {
+    min-height: 1.8em;
+    margin-bottom: 14px;
+    color: #b3dcff;
+    font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+    font-weight: 650;
+    line-height: 1.5;
+}
+
+#about-typing-text {
+    padding-right: 3px;
+    border-right: 2px solid #8fc7ff;
+    color: #b3dcff;
+}
+
+@keyframes about-caret-blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.js #about-typing-text {
+    animation: about-caret-blink 850ms steps(1, end) infinite;
+}
+
+.about-intro {
+    max-width: 480px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+    #About {
+        min-height: calc(100svh - 100px);
+        align-items: flex-start;
+        padding: 100px 24px 48px;
+        background-image:
+            linear-gradient(180deg, #0a192f 0%, rgba(10, 25, 47, 0.96) 32%, rgba(10, 25, 47, 0.55) 68%, rgba(10, 25, 47, 0.2) 100%),
+            url("../assets/icon.webp");
+        background-position: center, center bottom;
+        background-size: cover, auto 75%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js #about-typing-text {
+        animation: none;
+        border-right: 0;
+    }
+}

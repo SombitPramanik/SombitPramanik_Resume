@@ -1,0 +1,264 @@
+#Education {
+    padding: clamp(64px, 9vw, 112px) 24px;
+    background:
+        radial-gradient(ellipse at 100% 20%, rgba(35, 91, 143, 0.2), transparent 42%),
+        rgba(8, 20, 38, 0.8);
+    scroll-margin-top: 96px;
+}
+
+.education-container {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+.education-heading {
+    margin-bottom: 52px;
+    text-align: center;
+}
+
+.education-eyebrow {
+    margin-bottom: 10px;
+    color: #8fc7ff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.education-heading h2 {
+    margin-bottom: 12px;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.education-heading > p:last-child {
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.6;
+}
+
+.education-timeline {
+    position: relative;
+    display: grid;
+    gap: 36px;
+    padding-left: 34px;
+}
+
+.education-timeline::before {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: 2px;
+    background: linear-gradient(#8fc7ff, rgba(143, 199, 255, 0.12));
+    content: "";
+}
+
+.education-entry {
+    position: relative;
+    min-width: 0;
+}
+
+.education-entry-marker {
+    position: absolute;
+    top: 27px;
+    left: -33px;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #0b1b31;
+    border-radius: 50%;
+    background: #8fc7ff;
+    box-shadow: 0 0 0 3px rgba(143, 199, 255, 0.24);
+}
+
+.education-card {
+    padding: clamp(20px, 4vw, 32px);
+    border: 1px solid rgba(143, 199, 255, 0.16);
+    border-radius: 18px;
+    background: rgba(15, 35, 60, 0.78);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
+}
+
+.education-period {
+    margin-bottom: 8px;
+    color: #8fc7ff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.education-card h3 {
+    margin-bottom: 10px;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.3;
+}
+
+.education-institution {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.education-card a {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: #9fd2ff;
+    clip-path: none;
+    text-decoration: underline;
+    text-decoration-color: rgba(159, 210, 255, 0.45);
+    text-underline-offset: 3px;
+}
+
+.education-card a:hover {
+    color: #fff;
+    text-decoration-color: currentColor;
+}
+
+.education-detail,
+.semester-card > p {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.education-result {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.education-result strong {
+    color: #8fc7ff;
+    font-size: 1.5rem;
+}
+
+.education-result span {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.semester-timeline {
+    position: relative;
+    display: grid;
+    gap: 16px;
+    margin-top: 28px;
+    padding-left: 22px;
+}
+
+.semester-timeline::before {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 5px;
+    width: 2px;
+    background: rgba(143, 199, 255, 0.32);
+    content: "";
+}
+
+.semester-entry {
+    position: relative;
+    min-width: 0;
+}
+
+.semester-marker {
+    position: absolute;
+    top: 22px;
+    left: -22px;
+    width: 11px;
+    height: 11px;
+    border: 2px solid #8fc7ff;
+    background: #0f233c;
+    transform: rotate(45deg);
+}
+
+.semester-card {
+    padding: 18px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    background: rgba(5, 17, 32, 0.54);
+}
+
+.semester-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.semester-heading h4 {
+    font-size: 1.05rem;
+}
+
+.semester-heading h4 span {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.88rem;
+    font-weight: 400;
+}
+
+.semester-grade {
+    flex: 0 0 auto;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.88rem;
+}
+
+.semester-grade strong {
+    color: #8fc7ff;
+}
+
+.semester-card > p + p {
+    margin-top: 6px;
+}
+
+.semester-card > p strong {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 640px) {
+    #Education {
+        padding: 60px 18px;
+        scroll-margin-top: 84px;
+    }
+
+    .education-heading {
+        margin-bottom: 38px;
+    }
+
+    .education-timeline {
+        gap: 24px;
+        padding-left: 25px;
+    }
+
+    .education-timeline::before {
+        left: 6px;
+    }
+
+    .education-entry-marker {
+        left: -25px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .education-card {
+        padding: 20px 16px;
+    }
+
+    .semester-timeline {
+        padding-left: 17px;
+    }
+
+    .semester-marker {
+        left: -17px;
+        width: 9px;
+        height: 9px;
+    }
+
+    .semester-card {
+        padding: 16px 14px;
+    }
+
+    .semester-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+}

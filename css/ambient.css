@@ -1,0 +1,116 @@
+.ambient-scene {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.ambient-orb,
+.ambient-cursor {
+    position: absolute;
+    display: block;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(22px);
+    will-change: transform;
+}
+
+.ambient-orb {
+    width: clamp(110px, 20vw, 260px);
+    background: radial-gradient(circle, rgba(93, 172, 255, 0.4), rgba(52, 133, 222, 0.18) 42%, transparent 72%);
+    opacity: 0.76;
+}
+
+.ambient-orb-one {
+    top: 12%;
+    left: 8%;
+    animation: ambient-drift-one 24s ease-in-out infinite alternate;
+}
+
+.ambient-orb-two {
+    top: 42%;
+    right: 9%;
+    width: clamp(100px, 17vw, 220px);
+    background: radial-gradient(circle, rgba(83, 207, 229, 0.34), rgba(83, 156, 229, 0.16) 45%, transparent 72%);
+    animation: ambient-drift-two 29s ease-in-out infinite alternate;
+}
+
+.ambient-orb-three {
+    bottom: 8%;
+    left: 34%;
+    width: clamp(120px, 22vw, 290px);
+    background: radial-gradient(circle, rgba(105, 130, 255, 0.34), rgba(73, 107, 208, 0.16) 46%, transparent 72%);
+    animation: ambient-drift-three 32s ease-in-out infinite alternate;
+}
+
+.ambient-orb-four {
+    top: 70%;
+    right: 35%;
+    width: clamp(80px, 14vw, 180px);
+    background: radial-gradient(circle, rgba(93, 172, 255, 0.32), rgba(52, 133, 222, 0.14) 44%, transparent 72%);
+    animation: ambient-drift-four 27s ease-in-out infinite alternate;
+}
+
+.ambient-cursor {
+    top: 0;
+    left: 0;
+    width: clamp(240px, 32vw, 440px);
+    background:
+        radial-gradient(circle at 40% 42%, rgba(107, 182, 255, 0.34), transparent 44%),
+        radial-gradient(circle at 62% 60%, rgba(82, 204, 229, 0.2), transparent 50%);
+    opacity: 0;
+    transform: translate3d(var(--ambient-x, 50vw), var(--ambient-y, 50vh), 0) translate(-50%, -50%);
+    transition: opacity 700ms ease;
+    will-change: transform, opacity;
+}
+
+.ambient-cursor.is-active {
+    opacity: 0.85;
+}
+
+@keyframes ambient-drift-one {
+    to {
+        transform: translate3d(42px, 30px, 0) scale(1.12);
+    }
+}
+
+@keyframes ambient-drift-two {
+    to {
+        transform: translate3d(-35px, 44px, 0) scale(0.9);
+    }
+}
+
+@keyframes ambient-drift-three {
+    to {
+        transform: translate3d(48px, -36px, 0) scale(1.08);
+    }
+}
+
+@keyframes ambient-drift-four {
+    to {
+        transform: translate3d(-38px, -28px, 0) scale(1.1);
+    }
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+    .ambient-cursor {
+        transition: opacity 700ms ease, transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+}
+
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
+    .ambient-cursor {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ambient-orb {
+        animation: none;
+    }
+
+    .ambient-cursor {
+        display: none;
+    }
+}

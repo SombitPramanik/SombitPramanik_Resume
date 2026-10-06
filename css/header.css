@@ -1,0 +1,132 @@
+header nav {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    z-index: 1000;
+    width: min(1000px, calc(100% - 32px));
+    min-height: 70px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transform: translateX(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: rgba(10, 25, 47, 0.92);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.RightMenuItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#ProfileIcon {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    display: block;
+}
+
+.RightMenuItem a {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 22px;
+    transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.RightMenuItem a:hover {
+    transform: translateY(-2px);
+    background-color: #17365f;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+.RightMenuItem a:focus-visible {
+    outline: 2px solid #8fc7ff;
+    outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+    header nav {
+        top: 8px;
+        width: calc(100% - 24px);
+        padding: 12px;
+        min-height: 64px;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .RightMenuItem {
+        width: auto;
+        margin-left: auto;
+    }
+
+    .RightMenuItem .section-link {
+        display: none;
+    }
+
+    .RightMenuItem .resume-link {
+        padding: 10px 22px;
+    }
+
+    #ProfileIcon {
+        width: 42px;
+    }
+
+    .MobileBottomNav {
+        position: fixed;
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        left: 12px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        background: rgba(10, 25, 47, 0.94);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+
+    .MobileBottomNav a {
+        flex: 1;
+        margin: 0;
+        padding: 10px 4px;
+        text-align: center;
+        font-size: 0.8rem;
+        transition: transform 180ms ease, background-color 180ms ease;
+    }
+
+    .MobileBottomNav a:hover {
+        transform: translateY(-2px);
+        background-color: #17365f;
+    }
+
+    .MobileBottomNav a:focus-visible {
+        outline: 2px solid #8fc7ff;
+        outline-offset: 4px;
+    }
+}
+
+@media (min-width: 641px) {
+    .MobileBottomNav {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .RightMenuItem a,
+    .MobileBottomNav a {
+        transition: none;
+    }
+}
